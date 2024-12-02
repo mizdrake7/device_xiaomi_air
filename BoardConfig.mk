@@ -92,10 +92,7 @@ TARGET_SYSTEM_PROP += $(DEVICE_PATH)/configs/props/system.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/configs/props/vendor.prop
 TARGET_PRODUCT_PROP += $(DEVICE_PATH)/configs/props/product.prop
 TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/configs/props/system_ext.prop
-TARGET_SYSTEM_DLKM_PROP += $(DEVICE_PATH)/configs/props/system_dlkm.prop
 TARGET_ODM_PROP += $(DEVICE_PATH)/configs/props/odm.prop
-TARGET_ODM_DLKM_PROP += $(DEVICE_PATH)/configs/props/odm_dlkm.prop
-TARGET_VENDOR_DLKM_PROP += $(DEVICE_PATH)/configs/props/vendor_dlkm.prop
 
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.emmc
