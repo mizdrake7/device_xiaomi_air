@@ -21,10 +21,8 @@ vendor/lib/hw/android.hardware.audio.effect@6.0-impl.so
 vendor/lib/hw/android.hardware.audio.effect@7.0-impl.so
 vendor/lib/hw/audio.primary.default.so
 vendor/lib/hw/audio.primary.mediatek.so
-vendor/lib/hw/audio.primary.mt6835.so
 vendor/lib/hw/audio.r_submix.default.so
 vendor/lib/hw/audio.r_submix.mediatek.so
-vendor/lib/hw/audio.r_submix.mt6835.so
 vendor/lib/hw/audio.usb.default.so
 vendor/lib/audioclient-types-aidl-cpp.so
 vendor/lib/framework-permission-aidl-cpp.so
@@ -55,10 +53,8 @@ vendor/lib64/hw/android.hardware.audio.effect@6.0-impl.so
 vendor/lib64/hw/android.hardware.audio.effect@7.0-impl.so
 vendor/lib64/hw/audio.primary.default.so
 vendor/lib64/hw/audio.primary.mediatek.so
-vendor/lib64/hw/audio.primary.mt6835.so
 vendor/lib64/hw/audio.r_submix.default.so
 vendor/lib64/hw/audio.r_submix.mediatek.so
-vendor/lib64/hw/audio.r_submix.mt6835.so
 vendor/lib64/hw/audio.usb.default.so
 vendor/lib64/hw/audio_policy.stub.so
 vendor/lib64/hw/awinic.audio.effect.so
@@ -1406,7 +1402,10 @@ vendor/bin/wmt_launcher
 vendor/bin/wmt_loader
 vendor/etc/init/init.wlan_drv.rc
 vendor/etc/init/init.wmt_drv.rc
-vendor/firmware/WMT_SOC.cfg
+
+# Chipinfo
+vendor/bin/chipinfo
+vendor/etc/init/chipinfo_init.rc
 
 # Display
 vendor/bin/hw/mt6835/android.hardware.graphics.allocator@4.0-service-mediatek.mt6835
@@ -1557,27 +1556,6 @@ vendor/lib64/vendor.mediatek.hardware.pq@2.9.so
 vendor/lib64/vendor.mediatek.hardware.pq_aidl-V3-ndk.so
 vendor/lib64/vendor.xiaomi.hardware.displayfeature@1.0.so
 
-# Display firmware
-vendor/firmware/focaltech_ts_fw_BOE.bin
-vendor/firmware/mt6627_fm_v1_coeff.bin
-vendor/firmware/mt6627_fm_v1_patch.bin
-vendor/firmware/mt6630_fm_v1_coeff.bin
-vendor/firmware/mt6630_fm_v1_patch.bin
-vendor/firmware/mt6630_fm_v2_coeff.bin
-vendor/firmware/mt6630_fm_v2_coeff_tx.bin
-vendor/firmware/mt6630_fm_v2_patch.bin
-vendor/firmware/mt6630_fm_v2_patch_tx.bin
-vendor/firmware/mt6631_fm_v1_coeff.bin
-vendor/firmware/mt6631_fm_v1_patch.bin
-vendor/firmware/mt6632_fm_v1_coeff.bin
-vendor/firmware/mt6632_fm_v1_patch.bin
-vendor/firmware/mt6635_fm_v1_coeff.bin
-vendor/firmware/mt6635_fm_v1_patch.bin
-vendor/firmware/novatek_ts_hkc_fw.bin
-vendor/firmware/novatek_ts_hkc_mp.bin
-vendor/firmware/novatek_ts_truly_fw.bin
-vendor/firmware/novatek_ts_truly_mp.bin
-
 # DRM
 vendor/bin/hw/android.hardware.drm-service.clearkey
 vendor/bin/hw/android.hardware.drm-service.widevine
@@ -1627,14 +1605,8 @@ vendor/lib64/libfgauge_gm30.so
 # Gatekeeper
 vendor/bin/hw/android.hardware.gatekeeper@1.0-service
 vendor/etc/init/android.hardware.gatekeeper@1.0-service.rc
-vendor/lib/hw/android.hardware.gatekeeper@1.0-impl.so
-vendor/lib/hw/gatekeeper.default.so
-vendor/lib/hw/gatekeeper.mitee.so
-vendor/lib/hw/libSoftGatekeeper.so
 vendor/lib64/hw/android.hardware.gatekeeper@1.0-impl.so
-vendor/lib64/hw/gatekeeper.default.so
 vendor/lib64/hw/gatekeeper.mitee.so
-vendor/lib64/hw/libSoftGatekeeper.so
 
 # GNSS
 vendor/bin/hw/android.hardware.gnss-service.mediatek
@@ -1830,14 +1802,37 @@ vendor/lib64/vendor.mediatek.hardware.mtkradioex.sim-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.smartratswitch-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.mtkradioex.voice-V1-ndk.so
 
-# Radio (IMS)
-system_ext/lib/vendor.mediatek.hardware.videotelephony-V1-ndk.so
-system_ext/lib/vendor.mediatek.hardware.videotelephony@1.0.so
+# IMS
+system_ext/bin/vtservice
+system_ext/etc/init/init.vtservice.rc
+-system_ext/framework/mediatek-carrier-config-manager.jar:framework/mediatek-carrier-config-manager.jar
+-system_ext/framework/mediatek-common.jar:framework/mediatek-common.jar
+-system_ext/framework/mediatek-framework.jar:framework/mediatek-framework.jar
+-system_ext/framework/mediatek-ims-base.jar:framework/mediatek-ims-base.jar
+-system_ext/framework/mediatek-ims-common.jar:framework/mediatek-ims-common.jar
+-system_ext/framework/mediatek-ims-extension-plugin.jar:framework/mediatek-ims-extension-plugin.jar
+-system_ext/framework/mediatek-services.jar:framework/mediatek-services.jar
+-system_ext/framework/mediatek-telecom-common.jar:framework/mediatek-telecom-common.jar
+-system_ext/framework/mediatek-telephony-base.jar:framework/mediatek-telephony-base.jar
+-system_ext/framework/mediatek-telephony-common.jar:framework/mediatek-telephony-common.jar
+system_ext/lib64/libcomutils.so
+system_ext/lib64/libimsma.so
+system_ext/lib64/libimsma_adapt.so
+system_ext/lib64/libimsma_rtp.so
+system_ext/lib64/libimsma_socketwrapper.so
+system_ext/lib64/libmtk_vt_service.so
+system_ext/lib64/libmtk_vt_wrapper.so
+system_ext/lib64/libsignal.so
+system_ext/lib64/libsink.so
+system_ext/lib64/libsource.so
+system_ext/lib64/libvcodec_cap.so
+system_ext/lib64/libvcodec_capenc.so
+system_ext/lib64/libvt_avsync.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony-V1-ndk.so
 system_ext/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
+vendor/bin/hw/vtservice_hidl
+vendor/etc/init/init.vtservice_hidl.rc
 vendor/lib/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
-vendor/lib/vendor.mediatek.hardware.rcs@2.0.so
-vendor/lib/vendor.mediatek.hardware.videotelephony@1.0.so
 vendor/lib64/hw/vendor.mediatek.hardware.videotelephony@1.0-impl.so
 vendor/lib64/vendor.mediatek.hardware.rcs@2.0.so
 vendor/lib64/vendor.mediatek.hardware.videotelephony@1.0.so
@@ -1942,11 +1937,9 @@ vendor/bin/mitee_shell
 vendor/bin/miteelog
 vendor/bin/mrmd_mitee
 vendor/bin/tee-supplicant
-vendor/etc/init/android.hardware.identity@4.0-service.mitee.rc
 vendor/etc/init/miteelog.rc
 vendor/etc/init/mrm_mitee.rc
 vendor/etc/init/tee-supplicant.rc
-vendor/etc/vintf/manifest/android.hardware.identity@4.0-service.mitee.xml
 vendor/lib/libTEECommon.so
 vendor/lib64/libTEECommon.so
 vendor/lib64/libkeymint_support.so
@@ -1993,7 +1986,6 @@ vendor/etc/init/android.hardware.wifi@1.0-service-lazy.rc
 vendor/etc/vintf/manifest/android.hardware.wifi.hostapd.xml
 vendor/etc/vintf/manifest/android.hardware.wifi.supplicant.xml
 vendor/etc/vintf/manifest/android.hardware.wifi@1.0-service.xml
-vendor/firmware/wifi.cfg
 vendor/lib/libkeystore-wifi-hidl.so
 vendor/lib/libwifinvramdata.so
 vendor/lib64/libkeystore-engine-wifi-hidl.so
@@ -2019,7 +2011,6 @@ vendor/bin/hw/vendor.xiaomi.hardware.misys@1.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@2.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@3.0-service
 vendor/bin/hw/vendor.xiaomi.hardware.misys@4.0-service
-vendor/bin/hw/vtservice_hidl
 vendor/bin/mt6835/dumpfaultd.mt6835
 vendor/bin/mt6835/jpegtool
 vendor/bin/AgentTest
@@ -2036,7 +2027,6 @@ vendor/bin/ccci_fsd
 vendor/bin/ccci_mdinit
 vendor/bin/ccci_rpcd
 vendor/bin/charge_logger
-vendor/bin/chipinfo
 vendor/bin/conninfra_loader
 vendor/bin/dconfig
 vendor/bin/dexecutor
@@ -2121,7 +2111,6 @@ vendor/etc/init/init.fpsgo.rc
 vendor/etc/init/init.frs.rc
 vendor/etc/init/init.gps_drv.rc
 vendor/etc/init/init.gps_pwr.rc
-vendor/etc/init/init.vtservice_hidl.rc
 vendor/etc/init/ipsec_mon.rc
 vendor/etc/init/lbs_hidl_service.rc
 vendor/etc/init/lights-mtk-default.rc
@@ -2244,14 +2233,6 @@ vendor/etc/virtual-spn-conf-by-efspn.xml
 vendor/etc/virtual-spn-conf-by-imsi.xml
 vendor/etc/wfd_source_capability.csv
 vendor/etc/xgf.cfg
-vendor/firmware/BT_FW.cfg
-vendor/firmware/Conf_MultipleTest.ini
-vendor/firmware/awinic_params.bin
-vendor/firmware/awinic_sinwave_params.bin
-vendor/firmware/fm_cust.cfg
-vendor/firmware/remoteproc_scp
-vendor/firmware/soc_fm_v1_coeff.bin
-vendor/firmware/soc_fm_v1_patch.bin
 vendor/lib/hw/audio_policy.stub.so
 vendor/lib/hw/awinic.audio.effect.so
 vendor/lib/hw/mtkflp.default.so
@@ -2417,8 +2398,6 @@ vendor/lib/libudf.so
 vendor/lib/libvcodec_oal.so
 vendor/lib/libvcodec_utility.so
 vendor/lib/libvcodec_utility_plat.mt6835.so
-vendor/lib/libvcodec_utility_plat.mt6886.so
-vendor/lib/libvcodec_utility_plat.mt6985.so
 vendor/lib/libvcodecdrv.so
 vendor/lib/libvcodecdrv_header_stub.so
 vendor/lib/libviagpsrpc.so
