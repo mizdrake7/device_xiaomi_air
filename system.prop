@@ -1,3 +1,6 @@
+# Audio service timeout
+audio.service.client_wait_ms=10000
+
 # Display
 persist.sys.brightness.low.gamma=true
 persist.sys.sf.color_mode=0
