@@ -43,7 +43,6 @@ vendor/lib64/librt_extamp_intf.so
 vendor/lib64/libspeech_enh_lib.so;FIX_SONAME
 vendor/lib64/libspeechparser_vendor.so
 vendor/lib64/vendor.mediatek.hardware.audio@8.1.so
-vendor/lib64/vendor.mediatek.hardware.bluetooth.audio-V1-ndk.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.1.so
 vendor/lib64/vendor.mediatek.hardware.bluetooth.audio@2.2.so
 
@@ -1353,7 +1352,6 @@ vendor/lib64/libwifical.so
 vendor/lib64/libwifinvram.so
 vendor/lib64/libwifinvramdata.so
 vendor/lib64/libwpa_client.so
-vendor/lib64/vendor.mediatek.hardware.netdagent@1.0.so
 
 # WiFi (Firmware)
 vendor/firmware/WMT_SOC.cfg
